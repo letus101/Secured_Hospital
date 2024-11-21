@@ -43,7 +43,8 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.authorizeHttpRequests().requestMatchers("/ressources/**").permitAll();
+        httpSecurity.authorizeHttpRequests().requestMatchers("/resources/**").permitAll();
+        httpSecurity.authorizeHttpRequests().requestMatchers("/webjars/**").permitAll();
         httpSecurity.formLogin()
                 .loginPage("/login")
                 .defaultSuccessUrl("/user/index", true)
